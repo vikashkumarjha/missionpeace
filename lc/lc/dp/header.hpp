@@ -18,6 +18,8 @@
 #include <unordered_map>
 #include <set>
 #include <utility>
+#include <functional>
+#include <numeric>
 
 
 

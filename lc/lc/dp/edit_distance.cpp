@@ -6,6 +6,8 @@
 //  Copyright © 2020 vikash kumar jha. All rights reserved.
 //
 
+
+#if 0
 #include "header.hpp"
 using namespace std;
 
@@ -74,8 +76,10 @@ int main() {
      // your code goes here
        string str1 = "sunday";
        string str2 = "saturday";
-    std::cout << "\n Edit distance minimum:" << editDistanceRec(str1, str2);
+       std::cout << "\n Edit distance minimum:" << editDistanceRec(str1, str2);
 }
+
+#endif
 
 
 
