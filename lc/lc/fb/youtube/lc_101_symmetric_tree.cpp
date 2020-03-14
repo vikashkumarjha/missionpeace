@@ -1,4 +1,5 @@
 //
+//
 //  lc_101_symmetric_tree.cpp
 //  lc
 //
@@ -31,7 +32,6 @@
  */
 
 
-#if 0
 
 #include "header.hpp"
 
@@ -41,26 +41,18 @@ bool helper(TreeNode *l, TreeNode *r) {
     if ( !l && !r) {
         return true;
     }
-    
     if ( !l || !r) {
         return false;
     }
-    
     return (l->val == r->val) && helper(l->left, r->right) && helper(l->right , r->left);
-    
-    
 }
 
 
 
 bool isSymmetric(TreeNode* root) {
-    
     if ( !root)
         return true;
-    
-    
     return helper(root->left,root->right);
-    
 }
 
 
@@ -83,4 +75,3 @@ public boolean isSymmetric(TreeNode root) {
 }
 
 
-#endif
