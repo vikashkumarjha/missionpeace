@@ -15,7 +15,7 @@
  * +------------->
  * 0  1  2  3  4
  *
- * */
+ * */  
 
 #include "header.hpp"
 using namespace std;
