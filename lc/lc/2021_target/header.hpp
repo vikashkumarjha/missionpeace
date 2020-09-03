@@ -6,5 +6,8 @@
 #include <unordered_set>
 #include <cmath>
 #include <cstdlib>
+#include <stack>
+#include <queue>
+#include <list>
 
 using namespace std;
