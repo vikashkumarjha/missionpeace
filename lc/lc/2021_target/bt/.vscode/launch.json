@@ -10,8 +10,9 @@
         "request": "launch",
         "program": "${fileDirname}/${fileBasenameNoExtension}",
         "args": [],
-        "stopAtEntry": true,
+        "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
+
         "environment": [],
         "externalConsole": false,
         "MIMode": "lldb",
