@@ -31,8 +31,6 @@ class Graph {
 private:
     vector<vector<int>> adj;
     int N;
-    
-    
     void helper(int v, vector<bool> &isVisited, vector<int> &result) {
         stack<int> st;
         st.push(v);
@@ -41,49 +39,37 @@ private:
             if ( isVisited[curr]) continue;
             isVisited[curr] = true;
             result.push_back(curr);
-            
             for ( auto n : adj[curr]) {
                 if ( !isVisited[n]) {
                     st.push(n);
                 }
             }
         }
-
     }
-   
-   
-    
 public:
     Graph(vector<Edge> &edges, int n) {
         N = n;
         adj.resize(N);
-        
         for ( auto &e : edges) {
             adj[e.first].push_back(e.second);
             adj[e.second].push_back(e.first);
         }
-        
     }
-    
     vector<int> doDFSIter() {
         vector<int> result;
         vector<bool> isVisited(N, false);
-        
         for ( int i = 0; i < N; i++) {
             if ( !isVisited[i]) {
                 helper(i, isVisited, result);
             }
         }
-        
-        
         return result;
     }
-    
 };
 
 
 int main() {
-    
+
     // vector of graph edges as per above diagram
     vector<Edge> edges = {
         // Notice that node 0 is unconnected node
@@ -96,22 +82,19 @@ int main() {
 
     // create a graph from given edges
     Graph g(edges, N);
-    
+
     vector<int> result = g.doDFSIter();
-    
+
     std::for_each(result.begin(), result.end(), [](int x) {
         std::cout << x << "  ";
     });
-    
-    
-    
+
+
+
 
     return 0;
-    
-    
+
+
 }
 
 #endif
-
-
-
