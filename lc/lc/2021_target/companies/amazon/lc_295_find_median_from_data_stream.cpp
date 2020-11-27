@@ -22,7 +22,7 @@ double findMedian() - Return the median of all elements so far.
 #include <algorithm>
 #include <queue>
 #include <stack>
-#include <multiset>
+#include <set>
 
 using namespace std;
 
@@ -110,7 +110,7 @@ class MedianFinder3 {
     multiset<int>::iterator lo_median, hi_median;
 
 public:
-    MedianFinder()
+    MedianFinder3()
         : lo_median(data.end())
         , hi_median(data.end())
     {
