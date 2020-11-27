@@ -31,6 +31,41 @@ class Solution {
 public:
     int minMeetingRooms(vector<vector<int>>& intervals) {
 
+        if ( intervals.empty()) return 0;
+
+        priority_queue<int,int, greater<int>> pq; // min heap
+
+        vector<pair<int,int>> toSort;
+
+        for (auto i : intervals) {
+            toSort.push_back(make_pair(i[0], i[1]));
+        }
+
+        sort(begin(toSort), end(toSort), [](auto a, auto b) {
+            if ( a.first == b.first) {
+                return a.second < b.second;
+            }
+            return a.first < b.first;
+        });
+
+        // we will track the min end time 
+
+        pq.push(toSort[0].second);
+
         
+
+
+        for ( int i = 1; i < toSort.size(); i++) {
+            auto minEndTime = pq.top(); 
+            if ( minEndTime <= toSort[i].first) {
+                pq.pop();
+                pq.push(toSort[i].second);
+            }else {
+                pq.push(toSort[i].second);
+            }
+
+        }
+
+        return pq.size();
     }
 };
