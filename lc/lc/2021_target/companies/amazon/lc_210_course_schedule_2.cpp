@@ -25,6 +25,9 @@ So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
 
 */
 
+
+#include "header.hp"
+
 class Solution {
 public:
     vector<int> findOrder(int N, vector<vector<int>> & pre) {

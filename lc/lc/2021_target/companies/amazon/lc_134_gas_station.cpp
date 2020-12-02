@@ -19,6 +19,8 @@ cost = [3,4,5,1,2]
 */
 
 
+
+
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
