@@ -38,20 +38,30 @@ public:
         stack<Node*> st;
 
         while ( root || !st.empty()) {
-            while 
+            while ( root) {
+                st.push(root);
+                root = root->left;
+            } 
+            root = st.top(); st.pop();
+            if ( !head) {
+                head = root;
+            }
 
+            if (prev) {
+                prev->right = root;
+                root->left = prev;
+            }
 
-
+            prev = root;
+            root = root->right;
         }
 
+        // need to connect both head and prev
 
+        head->left = prev;
+        prev->right = head;
 
-
-
-
-
-
-
+        return head;
 
         
     }

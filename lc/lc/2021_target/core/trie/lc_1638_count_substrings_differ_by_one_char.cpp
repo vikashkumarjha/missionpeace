@@ -20,22 +20,39 @@ Explanation: The following are the pairs of substrings from s and t that differ 
 ("aba", "baba")
 ("aba", "baba")
 The underlined portions are the substrings that are chosen from s and t.
+/*
 
+Choose a start point for s and a start point for t, and then compare characters one by one.
+
+
+Explanation
+Try to match from s[i] and t[j],
+where i = 0 or j = 0.
+
+cur is the current number of consecutive same characters.
+pre is the previous number of consecutive same characters.
+
+*/
 
 class Solution {
 public:
-    int countSubstrings(string &s, string &t) {
-    int res = 0;
-    for (int i = 0; i < s.size(); ++i) {
-        for (int j = 0; j < t.size(); ++j) {
-            int miss = 0;
-            for (int pos = 0; i + pos < s.size() && j + pos < t.size(); ++pos) {
-                if (s[i + pos] != t[j + pos] && ++miss > 1)
-                    break;
-                res += miss;
-            }
-        }
+    int countSubstrings(string s, string t) {
+        int res = 0 ;
+        for (int i = 0; i < s.length(); ++i)
+            res += helper(s, t, i, 0);
+        for (int j = 1; j < t.length(); ++j)
+            res += helper(s, t, 0, j);
+        return res;
     }
-    return res;
-}
+
+    int helper(string s, string t, int i, int j) {
+        int res = 0, pre = 0, cur = 0;
+        for (int n = s.length(), m = t.length(); i < n && j < m; ++i, ++j) {
+            cur++;
+            if (s[i] != t[j])
+                pre = cur, cur = 0;
+            res += pre;
+        }
+        return res;
+    }
 };
