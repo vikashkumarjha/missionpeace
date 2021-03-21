@@ -2,6 +2,10 @@
 using namespace std;
 
 
+
+vector<string> v;
+helper(0, curr, dect, digits, res)
+
 class Solution {
 public:
 
