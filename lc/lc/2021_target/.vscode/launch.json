@@ -15,7 +15,8 @@
         "environment": [],
         "externalConsole": false,
         "MIMode": "lldb",
-        "preLaunchTask": "clang++ build active file"
+        "preLaunchTask": "clang++ build active file",
+        "miDebuggerPath": "/Users/vikashjha/.vscode/extensions/lldb/bin/lldb-mi"
       }
     ]
   }
